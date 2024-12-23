@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/actions_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_canves"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:id="@+id/undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/undo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Undo"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/redo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/redo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Redo"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.dark.canves.CanvasView
+        android:id="@+id/canvas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_below="@id/actions_bg"
+        android:layout_centerInParent="true"
+        android:layout_margin="12dp" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="12dp">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/font_size_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:value="56"
+            android:valueFrom="40"
+            android:valueTo="150"
+            android:visibility="gone"
+            app:tickColorActive="@color/track_color_inactive"
+            app:tickColorInactive="@color/tick_color_active"
+            app:trackColorActive="@color/track_color_active"
+            app:trackColorInactive="@color/track_color" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_footer"
+            android:elevation="1.5dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <LinearLayout
+                android:id="@+id/font_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/current_font"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="Font"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/open_font_menu"
+                    android:layout_width="20dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/up" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@color/txt_color" />
+
+            <LinearLayout
+                android:id="@+id/font_size_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/minus"
+                    android:layout_width="20dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/minus" />
+
+                <TextView
+                    android:id="@+id/size_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textAlignment="center"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/plus"
+                    android:layout_width="20dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/plus" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@color/txt_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/bold"
+                    android:layout_width="18dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/bold" />
+
+                <ImageView
+                    android:id="@+id/italic"
+                    android:layout_width="18dp"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:src="@drawable/italic" />
+
+                <ImageView
+                    android:id="@+id/center"
+                    android:layout_width="18dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/center" />
+
+                <ImageView
+                    android:id="@+id/underline"
+                    android:layout_width="18dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/underline" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addText"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_text"
+            android:textColor="@color/txt_color"
+            app:backgroundTint="@color/white"
+            app:icon="@drawable/type"
+            app:iconTint="@color/txt_color" />
+
+    </LinearLayout>
+
+</RelativeLayout>

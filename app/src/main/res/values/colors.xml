@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent">#FFFFF0F2</color>
+    <color name="txt_color">#2B2B2B</color>
+    <color name="track_color">#FFCFD4</color>
+    <color name="track_color_active">#925B5C</color>
+    <color name="track_color_inactive">#FFCFD4</color>
+    <color name="tick_color_active">#F35D67</color>
+</resources>
